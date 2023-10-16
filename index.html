@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Scraping</title>
+    <style>
+	body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    animation: fadeIn 2s ease;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #0074d9;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <h1>Cache Based Page Unlocker</h1>
+    <form onsubmit="openGeneratedURL(event)">
+        <label for="url">Enter URL to generate Google Cache URL:</label>
+        <input type="text" id="url" required>
+        <button type="submit">Generate Google Cache URL</button>
+    </form>
+<footer class="footer">
+                <p class="infos">© <script> document.write(new Date().getFullYear())</script>2023, Designed and Developed by <a href="https://thriam.netlify.app"> Thriam bakesvar B</a></p> 
+    </footer>
+    <script>
+        function openGeneratedURL(event) {
+            event.preventDefault();
+            const url = document.getElementById('url').value;
+            const encodedURL = encodeURIComponent(url);
+             const googleCacheURL = `http://webcache.googleusercontent.com/search?q=cache:${encodedURL}&sca_esv=573754553&strip=1&vwsrc=0`;
+           // Open the generated URL in a new tab or window
+            window.open(googleCacheURL, '_blank');
+        }
+    </script>
+</body>
+</html>
+
